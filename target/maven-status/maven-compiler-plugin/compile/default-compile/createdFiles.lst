@@ -1,5 +1,7 @@
 ba\unsa\etf\rpr\dao\LaptopDaoXMLFile.class
 ba\unsa\etf\rpr\dao\LaptopDaoJSONFile.class
+ba\unsa\etf\rpr\dao\NeodgovarajuciProcesorException.class
+ba\unsa\etf\rpr\dao\LaptopDaoXMLFile$1.class
 ba\unsa\etf\rpr\dao\LaptopDao.class
 ba\unsa\etf\rpr\dao\LaptopDaoSerializableFile.class
 ba\unsa\etf\rpr\Laptop.class
