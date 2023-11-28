@@ -10,52 +10,36 @@ public class App
 {
     public static void main( String[] args )
     {
-        // Primjeri korištenja klasa
-
-        // LicneInformacije
-        LicneInformacije osoba = new LicneInformacije();
-        osoba.setIme("Jon");
-        osoba.setPrezime("Jones");
-        System.out.println("Ime: " + osoba.getIme());
-        System.out.println("Prezime: " + osoba.getPrezime());
-
-        // InformacijeOStudentu
+        // Kreiramo studenta
         InformacijeOStudentu student = new InformacijeOStudentu();
-        student.setIme("Charles");
-        student.setPrezime("Oliveira");
+        student.setIme("John");
+        student.setPrezime("Doe");
         student.setGodinaStudija("3");
         student.setBrojIndexa("12345");
-        System.out.println("Ime studenta: " + student.getIme());
-        System.out.println("Godina studija: " + student.getGodinaStudija());
-        System.out.println("Broj indexa: " + student.getBrojIndexa());
 
-        // InformacijeONastavniku
-        InformacijeONastavniku nastavnik = new InformacijeONastavniku();
-        nastavnik.setIme("Profesor");
-        nastavnik.setPrezime("McGregor");
-        nastavnik.setTitula("Dr.");
+        // Kreiramo predmet
+        Predmet programiranje = new Predmet("Programiranje", "Učenje programiranja");
+
+        // Student ocjenjuje predmet
+        Ocjena ocjenaZaProgramiranje = student.ocijeni(9);
+        programiranje.dodajOcjenu(ocjenaZaProgramiranje);
+
+        // Prikazujemo informacije o predmetu i ocjeni
+        System.out.println("Naziv predmeta: " + programiranje.getNaziv());
+        System.out.println("Opis predmeta: " + programiranje.getOpis());
+        System.out.println("Ocjena studenta: " + ocjenaZaProgramiranje.getOcjena());
+
+        // Kreiramo nastavnika
+        InformacijeONastavniku nastavnik = new InformacijeONastavniku("Profesor", "Smith", "Dr.");
+
+        // Student ocjenjuje nastavnika
+        Ocjena ocjenaZaNastavnika = student.ocijeni(8);
+        nastavnik.ocijeni(ocjenaZaNastavnika.getOcjena());
+
+        // Prikazujemo informacije o nastavniku i ocjeni
         System.out.println("Ime nastavnika: " + nastavnik.getIme());
-        System.out.println("Titula: " + nastavnik.getTitula());
-
-        // Predmet
-        Predmet predmet = new Predmet();
-        predmet.setNaziv("Programiranje");
-        predmet.setOpis("Učenje programiranja");
-        System.out.println("Naziv predmeta: " + predmet.getNaziv());
-        System.out.println("Opis predmeta: " + predmet.getOpis());
-
-        // KolekcijaPoruka
-        List<LicneInformacije> listaInformacija = new ArrayList<>();
-        listaInformacija.add(osoba);
-        listaInformacija.add(student);
-        listaInformacija.add(nastavnik);
-
-        KolekcijaPoruka kolekcijaPoruka = new KolekcijaPoruka(listaInformacija);
-        List<String> poruke = kolekcijaPoruka.getPoruke();
-
-        System.out.println("\nPoruke:");
-        for (String poruka : poruke) {
-            System.out.println(poruka);
-        }
+        System.out.println("Titula nastavnika: " + nastavnik.getTitula());
+        System.out.println("Ocjena studenta za nastavnika: " + ocjenaZaNastavnika.getOcjena());
     }
-}
+    }
+
