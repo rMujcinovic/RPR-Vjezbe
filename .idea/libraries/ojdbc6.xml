@@ -2,8 +2,10 @@
   <library name="ojdbc6">
     <CLASSES>
       <root url="jar://$USER_HOME$/Documents/lag parcijale/ojdbc6.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../../../Program Files/Java/javafx-sdk-21.0.1/lib" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../../../Program Files/Java/javafx-sdk-21.0.1/lib" recursive="false" />
   </library>
 </component>
